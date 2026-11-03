@@ -41,3 +41,4 @@ export const Contact = mongoose.model('Contact', contactSchema);
 export const Project = mongoose.model('Project', projectSchema);
 export const Education = mongoose.model('Education', educationSchema);
 export const User = mongoose.model('User', userSchema);
+export default { Contact, Project, Education, User };
