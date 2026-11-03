@@ -1,10 +1,12 @@
 import express from 'express'
-import contactCtrl from '../controller/Contact.controller.js'
+import projectCtrl from '../controller/Project.controller.js'
 const router = express.Router()
-router.route('/api/contacts').post(contactCtrl.create)
-router.route('/api/contacts').get(contactCtrl.list)
-router.param('contactId', contactCtrl.contactByID)
-router.route('/api/contacts/:contactId').get(contactCtrl.read)
-router.route('/api/contacts/:contactId').put(contactCtrl.update)
-router.route('/api/contacts/:contactId').delete(contactCtrl.remove)
+router.route('/api/projects').post(projectCtrl.create)
+router.route('/api/projects').get(projectCtrl.list)
+router.param('projectId', projectCtrl.projectByID)
+router.route('/api/projects/:projectId').get(projectCtrl.read)
+router.route('/api/projects/:projectId').put(projectCtrl.update)
+router.route('/api/projects/:projectId').delete(projectCtrl.remove)
+router.route('/api/projects').delete(projectCtrl.removeAll)
+
 export default router
