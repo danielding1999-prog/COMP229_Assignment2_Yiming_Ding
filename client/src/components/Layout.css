@@ -1,0 +1,29 @@
+.portfolio-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #f8f9fa;
+    padding: 15px 30px;
+    border-bottom: 2px solid #eaeaea;
+}
+
+.portfolio-header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.portfolio-nav {
+    margin-top: 10px;
+    padding: 0 30px;
+}
+
+.portfolio-nav a {
+    text-decoration: none;
+    color: #007bff;
+    margin-right: 10px;
+}
+
+.portfolio-nav a:hover {
+    text-decoration: underline;
+}
