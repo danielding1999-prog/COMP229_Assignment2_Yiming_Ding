@@ -1,11 +1,11 @@
 {
-  "name": "client",
+  "name": "Portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://danielding1999-prog.github.io/COMP229_Assignment1_Yiming_Ding",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently \"vite\" \"nodemon server.js\"",
     "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview",
@@ -13,7 +13,15 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "body-parser": "^2.4.0",
+    "compression": "^1.8.2",
+    "concurrently": "^10.0.6",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
     "express": "^5.3.0",
+    "global": "^4.4.0",
+    "helmet": "^8.3.0",
+    "mongoose": "^9.11.4",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-icons": "^5.7.0",
@@ -24,7 +32,12 @@
     "@types/react-dom": "^19.2.7",
     "@vitejs/plugin-react": "^6.1.1",
     "gh-pages": "^6.3.0",
+    "nodemon": "^3.1.14",
     "oxlint": "^1.81.0",
     "vite": "^8.3.0"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/danielding1999-prog/COMP229_Assignment2_Yiming_Ding",
+  "author": "Yiming Ding",
+  "license": "MIT"
 }
