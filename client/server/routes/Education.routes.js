@@ -1,10 +1,11 @@
 import express from 'express'
-import contactCtrl from '../controller/Contact.controller.js'
+import educationCtrl from '../controller/Education.controller.js'
 const router = express.Router()
-router.route('/api/contacts').post(contactCtrl.create)
-router.route('/api/contacts').get(contactCtrl.list)
-router.param('contactId', contactCtrl.contactByID)
-router.route('/api/contacts/:contactId').get(contactCtrl.read)
-router.route('/api/contacts/:contactId').put(contactCtrl.update)
-router.route('/api/contacts/:contactId').delete(contactCtrl.remove)
+router.route('/api/educations').post(educationCtrl.create)
+router.route('/api/educations').get(educationCtrl.list)
+router.param('educationId', educationCtrl.educationByID)
+router.route('/api/educations/:educationId').get(educationCtrl.read)
+router.route('/api/educations/:educationId').put(educationCtrl.update)
+router.route('/api/educations/:educationId').delete(educationCtrl.remove)
+router.route('/api/educations').delete(educationCtrl.removeAll)
 export default router

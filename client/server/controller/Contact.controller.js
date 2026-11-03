@@ -70,8 +70,20 @@ const remove = async (req, res) => {
     return res.status(400).json({
       error: errorHandler.getErrorMessage(err),
     });
+    
   }
 };
 
+const removeAll = async (req, res) => {
+  try {
+    let deletedContact = await Contact.deleteMany({});
+    res.json(deletedContact);
+  } catch (err) {
+    return res.status(400).json({
+      error: errorHandler.getErrorMessage(err),
+    });
+  }
+}
+
 // export default { create, userByID, read, list, remove, update };
-export default { create, list, contactByID, read, update, remove };
+export default { create, list, contactByID, read, update, remove, removeAll };

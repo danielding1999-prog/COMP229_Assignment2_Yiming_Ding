@@ -6,6 +6,7 @@ import cors from 'cors'
 import helmet from 'helmet'
 import router from './assets-router.js'
 import contactRoutes from './routes/contact.routes.js'
+import educationRoutes from './routes/Education.routes.js'
 const app = express()
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -15,4 +16,5 @@ app.use(helmet())
 app.use(cors())
 app.use('/', router)
 app.use('/', contactRoutes)
+app.use('/', educationRoutes)
 export default app

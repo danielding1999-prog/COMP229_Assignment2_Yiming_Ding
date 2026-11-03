@@ -7,4 +7,5 @@ router.param('contactId', contactCtrl.contactByID)
 router.route('/api/contacts/:contactId').get(contactCtrl.read)
 router.route('/api/contacts/:contactId').put(contactCtrl.update)
 router.route('/api/contacts/:contactId').delete(contactCtrl.remove)
+router.route('/api/contacts').delete(contactCtrl.removeAll)
 export default router
