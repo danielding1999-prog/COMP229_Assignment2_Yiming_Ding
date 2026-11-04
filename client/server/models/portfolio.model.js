@@ -27,18 +27,9 @@ const educationSchema = new mongoose.Schema({
   description: { type: String }
 });
 
-// IV. Users Schema
-const userSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  email: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
-  created: { type: Date, default: Date.now },
-  updated: { type: Date, default: Date.now }
-});
 
 // Export Models (Mongoose automatically maps these to lowercase plural collections: contacts, projects, educations, users)
 export const Contact = mongoose.model('Contact', contactSchema);
 export const Project = mongoose.model('Project', projectSchema);
 export const Education = mongoose.model('Education', educationSchema);
-export const User = mongoose.model('User', userSchema);
-export default { Contact, Project, Education, User };
+export default { Contact, Project, Education };

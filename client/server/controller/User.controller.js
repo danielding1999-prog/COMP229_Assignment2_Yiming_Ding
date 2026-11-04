@@ -1,4 +1,6 @@
-import { User } from "../models/portfolio.model.js";
+import User from "../models/user.model.js";
+// If you have a custom error handler utility, import it like this:
+// import errorHandler from "../helpers/dbErrorHandler.js"; 
 
 // creating a user form submission
 const create = async (req, res) => {
@@ -11,6 +13,7 @@ const create = async (req, res) => {
   } catch (err) {
     return res.status(400).json({
       error: "Error submitting user form",
+      // error: errorHandler.getErrorMessage(err), // Use if errorHandler is defined
     });
   }
 };
@@ -56,7 +59,7 @@ const update = async (req, res) => {
     res.json(user);
   } catch (err) {
     return res.status(400).json({
-      error: errorHandler.getErrorMessage(err),
+      error: err.message, // Fallback if errorHandler is not implemented
     });
   }
 };
@@ -68,9 +71,8 @@ const remove = async (req, res) => {
     res.json(deleteduser);
   } catch (err) {
     return res.status(400).json({
-      error: errorHandler.getErrorMessage(err),
+      error: err.message,
     });
-    
   }
 };
 
@@ -80,10 +82,9 @@ const removeAll = async (req, res) => {
     res.json(deleteduser);
   } catch (err) {
     return res.status(400).json({
-      error: errorHandler.getErrorMessage(err),
+      error: err.message,
     });
   }
-}
+};
 
-// export default { create, userByID, read, list, remove, update };
 export default { create, list, userByID, read, update, remove, removeAll };
